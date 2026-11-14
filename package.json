@@ -1,0 +1,33 @@
+{
+  "name": "ai-visibility-auditor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Publishing stage for AI Visibility Auditor: apply approved fix-pack changes to live sites.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node tools/copy-ui.mjs",
+    "key:init": "node dist/src/app/init-key.js",
+    "plugin:build": "node tools/build-plugin.mjs",
+    "start": "node dist/src/app/main.js",
+    "test": "vitest run tests/unit tests/worker tests/app",
+    "test:all": "npm run test && npm run test:integration",
+    "test:integration": "vitest run tests/integration --testTimeout=180000 --hookTimeout=300000",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "wp:start": "node tools/playground.mjs start",
+    "wp:stop": "node tools/playground.mjs stop"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "miniflare": "^4.20260730.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

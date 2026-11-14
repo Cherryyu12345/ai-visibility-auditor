@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Visibility Auditor — Publishing</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      AI Visibility Auditor <small>publishing</small>
+    </div>
+    <select id="site-picker" style="width:auto;min-width:200px"></select>
+    <span class="pill" id="operator-pill" title="Recorded against everything you approve or apply"></span>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="connect" aria-selected="true">Connect website</button>
+    <button role="tab" data-tab="changes" aria-selected="false">Changes <span class="count" id="count-changes">0</span></button>
+    <button role="tab" data-tab="history" aria-selected="false">History</button>
+  </nav>
+
+  <section id="tab-connect"></section>
+  <section id="tab-changes" hidden></section>
+  <section id="tab-history" hidden></section>
+</main>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>
